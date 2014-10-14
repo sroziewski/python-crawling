@@ -1,15 +1,14 @@
 from scrapy.spider import Spider
 from scrapy.selector import Selector
 
-from dirbot.items import Website
+from uksw.items import Website
 
 
-class DmozSpider(Spider):
-    name = "dmoz"
-    allowed_domains = ["dmoz.org"]
+class UKSWSpider(Spider):
+    name = "uksw"
+    allowed_domains = ["www.ecolex.org"]
     start_urls = [
-        "http://www.dmoz.org/Computers/Programming/Languages/Python/Books/",
-        "http://www.dmoz.org/Computers/Programming/Languages/Python/Resources/",
+        "http://www.ecolex.org/ecolex/ledge/view/SearchResults;DIDPFDSIjsessionid=A4AEFE4145473BF69935AA6AF2A46BD6?screen=Common&listingField=&allFields=&allFields_allWords=allWords&titleOfText=&titleOfText_allWords=allWords&subject=&subject_allWords=allWords&country=&country_allWords=allWords&region=&region_allWords=allWords&basin=&basin_allWords=allWords&keyword=&keyword_allWords=allWords&languageOfDocument=&languageOfDocument_allWords=allWords&searchDate_start=1960&searchDate_end=2014&sortField=searchDate",
     ]
 
     def parse(self, response):
